@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema de Gestión Médica{% endblock %}</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Paleta de colores personalizada (Azul Oscuro Médico) -->
+    <style>
+        :root {
+            --bs-primary: #0b2545; /* Azul noche / navy sobrio */
+            --bs-primary-hover: #134074;
+            --bs-accent: #8da9c4;
+        }
+
+        .bg-primary-custom {
+            background-color: var(--bs-primary) !important;
+        }
+
+        .text-primary-custom {
+            color: var(--bs-primary) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            color: #ffffff;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--bs-primary-hover);
+            border-color: var(--bs-primary-hover);
+            color: #ffffff;
+        }
+
+        .btn-outline-primary-custom {
+            color: var(--bs-primary);
+            border-color: var(--bs-primary);
+        }
+
+        .btn-outline-primary-custom:hover {
+            background-color: var(--bs-primary);
+            color: #ffffff;
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+                <i class="bi bi-hospital me-2"></i>Centro Médico
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'home' %}">Inicio</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-2">
+                    {% if user.is_authenticated %}
+                        <a href="#" class="btn btn-outline-light btn-sm align-self-center">
+                            <i class="bi bi-person-circle me-1"></i>Mi Cuenta
+                        </a>
+                        <a href="#" class="btn btn-light btn-sm align-self-center text-primary-custom fw-semibold">Cerrar Sesión</a>
+                    {% else %}
+                        <a href="#" class="btn btn-outline-light btn-sm">Iniciar Sesión</a>
+                        <a href="#" class="btn btn-light btn-sm text-primary-custom fw-semibold">Registrarse</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Alertas y Mensajes de Django -->
+    {% if messages %}
+        <div class="container mt-3">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Contenido Principal Extensible -->
+    <main class="flex-grow-1">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 class="fw-bold"><i class="bi bi-hospital me-2"></i>Centro Médico Digital</h5>
+                    <p class="text-muted small mb-0">Plataforma integral de gestión de turnos, consultas y seguimiento de antecedentes de salud.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted small mb-1">&copy; {% now "Y" %} Centro Médico. Todos los derechos reservados.</p>
+                    <span class="badge bg-secondary">Sistema de Auditoría Activo</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

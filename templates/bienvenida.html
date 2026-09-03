@@ -1,9 +1,51 @@
-<html>
-    <head>
-        <title>Bienvenido</title>
-    </head>
-    <body>
-        <h1>Bienvenido a nuestra aplicación</h1>
-        <p>¡Gracias por visitarnos!</p>
-    </body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Bienvenido - Centro Médico Digital{% endblock %}
+
+{% block content %}
+<div class="container d-flex align-items-center justify-content-center min-vh-75 py-5">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-xl-7">
+            
+            <div class="mb-4">
+                <div class="bg-primary-custom text-white d-inline-flex align-items-center justify-content-center rounded-circle shadow-lg" style="width: 100px; height: 100px;">
+                    <i class="bi bi-hospital fs-1"></i>
+                </div>
+            </div>
+
+            <h1 class="display-4 fw-bold text-dark mb-3">
+                Sistema de Gestión de Turnos Médicos
+            </h1>
+            <p class="lead text-muted mb-4 px-md-4">
+                Bienvenido a la plataforma centralizada para la coordinación de consultas, atención médica y seguimiento histórico de pacientes.
+            </p>
+
+            <div class="card border-0 shadow-sm bg-white p-4 mb-4 rounded-4">
+                <div class="row g-3 text-start">
+                    <div class="col-md-6 d-flex align-items-start">
+                        <i class="bi bi-person-badge text-primary-custom fs-3 me-3"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1">Especialistas</h6>
+                            <p class="small text-muted mb-0">Gestión de agenda, control de atenciones y auditoría.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-start">
+                        <i class="bi bi-calendar-check text-primary-custom fs-3 me-3"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1">Pacientes</h6>
+                            <p class="small text-muted mb-0">Reserva de turnos en línea y acceso a historial clínico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-md-8 mx-auto">
+                <a href="{% url 'home' %}" class="btn btn-primary-custom btn-lg py-3 fw-bold shadow-sm rounded-3">
+                    Ingresar al Portal Principal <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

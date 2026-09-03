@@ -15,12 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from app_turnos.views import pagina_no_encontrada
-import include
+from django.urls import path, include
+from app_turnos import urls as app_turnos_urls
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app_turnos/', include('app_turnos.urls')),
+    path('', include(app_turnos_urls)),
 ]
-handler404 = pagina_no_encontrada
+handler404 = 'app_turnos.views.error_404'

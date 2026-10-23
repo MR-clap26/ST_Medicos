@@ -1,0 +1,18 @@
+[
+    {
+        "model": "tu_app.historialmedico",
+        "pk": 1,
+        "fields": {
+            "turno": 1,
+            "paciente": 1,
+            "especialista": 1,
+            "diagnostico": "Hipertensión leve controlada",
+            "tratamiento": "Dieta baja en sodio y control en 6 meses",
+            "observaciones": "Paciente muestra buena adherencia al tratamiento",
+            "fecha_registro": "2026-04-01T10:30:00Z",
+            "habilitado": true,
+            "created_at": "2026-04-01T00:00:00Z",
+            "updated_at": "2026-04-01T00:00:00Z"
+        }
+    }
+]

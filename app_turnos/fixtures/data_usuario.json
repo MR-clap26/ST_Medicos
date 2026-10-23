@@ -1,0 +1,18 @@
+[
+    {
+        "model": "tu_app.usuario",
+        "pk": 1,
+        "fields": {
+            "nombre": "Dr. Carlos Pérez",
+            "rut": "12345678-9",
+            "correo": "carlos.perez@medica.cl",
+            "telefono": "+56912345678",
+            "fecha_nacimiento": "1980-05-15",
+            "contrasenia": "pbkdf2_sha256$600000$dummyhash...",
+            "rol": 2,
+            "habilitado": true,
+            "created_at": "2026-03-30T00:00:00Z",
+            "updated_at": "2026-03-30T00:00:00Z"
+        }
+    }
+]

@@ -1,0 +1,24 @@
+[
+    {
+        "model": "tu_app.agendadisponibilidad",
+        "pk": 1,
+        "fields": {
+            "estado_disponibilidad": "Disponible",
+            "descripcion": "Bloque horario libre para reserva",
+            "habilitado": true,
+            "created_at": "2026-03-30T00:00:00Z",
+            "updated_at": "2026-03-30T00:00:00Z"
+        }
+    },
+    {
+        "model": "tu_app.agendadisponibilidad",
+        "pk": 2,
+        "fields": {
+            "estado_disponibilidad": "Reservado",
+            "descripcion": "Bloque horario ocupado por un turno",
+            "habilitado": true,
+            "created_at": "2026-03-30T00:00:00Z",
+            "updated_at": "2026-03-30T00:00:00Z"
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "tu_app.turno",
+        "pk": 1,
+        "fields": {
+            "paciente": 1,
+            "especialista": 1,
+            "fecha_hora": "2026-04-01T10:00:00Z",
+            "estado": 1,
+            "motivo_consulta": "Control preventivo de presión arterial",
+            "habilitado": true,
+            "created_at": "2026-03-30T00:00:00Z",
+            "updated_at": "2026-03-30T00:00:00Z"
+        }
+    }
+]

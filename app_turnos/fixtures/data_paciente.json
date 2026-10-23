@@ -1,0 +1,13 @@
+[
+    {
+        "model": "tu_app.paciente",
+        "pk": 1,
+        "fields": {
+            "usuario": 1,
+            "prevision": "Fonasa",
+            "habilitado": true,
+            "created_at": "2026-03-30T00:00:00Z",
+            "updated_at": "2026-03-30T00:00:00Z"
+        }
+    }
+]

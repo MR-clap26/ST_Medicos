@@ -1,0 +1,14 @@
+[
+    {
+        "model": "tu_app.especialista",
+        "pk": 1,
+        "fields": {
+            "usuario": 1,
+            "especialidad": 1,
+            "registro_medico": "RM-45892",
+            "habilitado": true,
+            "created_at": "2026-03-30T00:00:00Z",
+            "updated_at": "2026-03-30T00:00:00Z"
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "tu_app.auditoriaturno",
+        "pk": 1,
+        "fields": {
+            "turno": 1,
+            "estado_anterior": "Programado",
+            "estado_nuevo": "Atendido",
+            "modificado_por": 1,
+            "comentario": "Modificación realizada al finalizar la consulta médica",
+            "fecha_cambio": "2026-04-01T10:30:00Z",
+            "habilitado": true,
+            "created_at": "2026-04-01T00:00:00Z",
+            "updated_at": "2026-04-01T00:00:00Z"
+        }
+    }
+]
